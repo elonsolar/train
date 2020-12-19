@@ -1,0 +1,17 @@
+version: "3"
+
+services: 
+  gateway:
+    image: dev.codenai.com:5000/gateway
+    ports: 
+      - "8001:8001"
+    volumes: 
+      - "./cmd/gateway/application.toml:/root/application.toml"
+
+  metro:
+    image: dev.codenai.com:5000/metro
+    ports: 
+      - "8803:8803"
+      - "8804:8804"
+    volumes: 
+      - "./cmd/metro/application.toml:/root/application.toml"
